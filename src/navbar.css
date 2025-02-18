@@ -1,7 +1,8 @@
 .nav{
     height: 76px;
-    border:solid 2px black;
     display: flex;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .inputbtn{
     height: 51px;
@@ -34,4 +35,34 @@
     margin-top: 17px;
     margin-left: 79px;
 
+}
+
+@media(max-width:720px){
+    .inputbtn{
+        margin-left: 8px;
+        height: 32px;
+        width: 185px;
+        margin-top: 20px;
+    
+    }
+    .homelogo{
+        margin-left: 8px;
+        margin-top: 24px;
+        height: 30px;
+    }
+    .fav{
+        margin-left: 8px;
+        height: 30px;
+        margin-top: 24px;
+    }
+    .cart{
+        margin-left: 8px;
+        height: 30px;
+        margin-top: 24px;
+    }
+    .profile{
+        margin-left: 8px;
+        height: 30px;
+        margin-top: 24px;
+    }
 }
