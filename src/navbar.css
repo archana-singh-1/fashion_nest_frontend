@@ -1,10 +1,37 @@
 .nav{
     height: 76px;
     border:solid 2px black;
+    display: flex;
 }
 .inputbtn{
     height: 51px;
     width: 454px;
     margin-left: 630px;
-    margin-top: 11px;
+    margin-top: 10px;
+}
+
+.homelogo{
+    height: 40px;
+    margin-left: 260px;
+    margin-top: 16px;
+}
+
+
+.fav{
+    height: 40px;
+    margin-left: 110px;
+    margin-top: 18px;
+
+}
+.cart{
+    height: 40px;
+    margin-top: 17px;
+    margin-left: 79px;
+}
+
+.profile{
+    height: 40px;
+    margin-top: 17px;
+    margin-left: 79px;
+
 }
