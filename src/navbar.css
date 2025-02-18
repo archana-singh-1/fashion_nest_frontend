@@ -36,33 +36,65 @@
     margin-left: 79px;
 
 }
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputbtn {
+    width: 454px;
+    height: 51px;
+    padding-left: 40px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 641px;
+    height: 25px;
+    margin-top: 11px;
+    cursor: pointer;
+}
+
 
 @media(max-width:720px){
     .inputbtn{
         margin-left: 8px;
         height: 32px;
         width: 185px;
-        margin-top: 20px;
+        
     
     }
     .homelogo{
         margin-left: 8px;
-        margin-top: 24px;
         height: 30px;
+        margin-top: 27px;
     }
     .fav{
         margin-left: 8px;
         height: 30px;
-        margin-top: 24px;
+        margin-top: 28px;
+        
     }
     .cart{
         margin-left: 8px;
         height: 30px;
-        margin-top: 24px;
+        margin-top: 28px;
+       
     }
     .profile{
         margin-left: 8px;
         height: 30px;
-        margin-top: 24px;
+        margin-top: 28px;
+
+    }
+    .search-icon{
+        position: absolute;
+        left: 17px;
+        height: 17px;
+        cursor: pointer;
     }
 }
