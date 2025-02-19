@@ -27,9 +27,13 @@
   
 }
 
-.slick-slider{
-    position: static;
+
+
+
+.slick-dots {
+    padding: 40px;
 }
+
 
 @media(max-width:720px){
     .slick-slider{

@@ -1,0 +1,21 @@
+/* .main_container{
+    border: solid 2px black;
+    height: 500px;
+} */
+
+.row{
+   max-width: 1400px;
+   border: solid 2px black;
+   height: 400px;
+   margin: auto;
+   display: flex;
+   gap: 30px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.col{
+    width: 340px;
+    border: solid 2px black;
+    
+}
