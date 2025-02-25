@@ -1,14 +1,17 @@
+
 import Navbar from "./Navbar";
-// import Sliders from "./Slider";
+import Footer from "./Footer";
 import Recoman from "./Recoman";
 function App(){
-  return(
-    <>
-     <Navbar/>
-     {/* <Sliders/> */}
-     <Recoman/>
+  
+    return (
+      <>
+      <Navbar/>
+      <Recoman />
+     <Footer/>
      
     </>
   )
+   
 }
 export default App;

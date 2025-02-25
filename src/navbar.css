@@ -1,7 +1,7 @@
 .nav{
     height: 76px;
     display: flex;
-    background-color: white;
+    background-color: black;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .inputbtn{
