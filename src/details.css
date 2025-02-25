@@ -1,0 +1,32 @@
+.details{
+    width: 340px;
+    border: solid 2px white;
+    background-color: white;
+    box-shadow: 5px 5px 10px gray;
+    text-decoration: none;
+    color: inherit; 
+    margin: auto;
+    margin-top: 50px;
+}
+
+.details-image{
+    width: 100%;
+    
+}
+
+.addcart{
+    height: 40px;
+    width: 120px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    background-color: #e60073;
+
+}
+.buynow{
+    height: 40px;
+    width: 120px;
+    margin-left: 40px;
+    background-color: green;
+    
+
+}

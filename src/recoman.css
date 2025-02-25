@@ -18,6 +18,8 @@
     border: solid 2px white;
     background-color: white;
     box-shadow: 5px 5px 10px gray;
+    text-decoration: none;
+    color: inherit; 
     
     
 }
