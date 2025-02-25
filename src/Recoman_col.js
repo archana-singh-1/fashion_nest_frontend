@@ -3,10 +3,11 @@ import "./recoman.css";
 function RecomanCol({item}) {
   return (
     <div className="col">
-      <p>{item.name}</p>
-      <p>{item.price}</p>
-      <p>{item.description}</p>
-      <img src={item.image} alt="" width="200px"/>
+      <img src={item.image} alt="" className="images"/>
+      <p className="name">{item.name}</p>
+      <p className="price"> <span>₹</span>{item.price}</p>
+      <p className="desc">{item.description}</p>
+      
     </div>
   );
 }
