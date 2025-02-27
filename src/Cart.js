@@ -17,8 +17,8 @@ function Cart() {
             <div key={item._id} className="cart-item">
               <img src={item.image} alt={item.name} className="cart-image" />
               <div>
-                <h3>{item.name}</h3>
-                <p>₹{item.price}</p>
+                <h3 className="cartname">{item.name}</h3>
+                <p className="price">₹{item.price}</p>
               </div>
             </div>
           ))}
