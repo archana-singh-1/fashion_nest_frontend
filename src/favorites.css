@@ -1,0 +1,46 @@
+.favorites-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .favorite-item {
+    text-decoration: none;
+    color: black;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .favContain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fav-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .fav-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  
+  .fav-price {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .favHead{
+    text-align: center;
+    padding: 20px;
+  }
