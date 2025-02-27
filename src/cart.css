@@ -12,7 +12,11 @@
     color: #333;
   }
   
-
+  .cart-items {
+    display: flex;
+    gap: 15px;
+  }
+  
   .cart-item {
     align-items: center;
     background: #f9f9f9;
@@ -84,10 +88,20 @@
     font-weight: 700;
   }
 
+  .buynowbtn{
+    height: 40px;
+    width: 120px;
+    margin-left: 3px;
+    background-color: green;
+    border: none;
+    color: wheat;
+    font-weight: 600;
+  }
+
   @media(max-width:720px){
-    .cart-container {
+    .cart-items{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
   }

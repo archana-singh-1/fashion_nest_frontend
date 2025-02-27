@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams ,useNavigate} from "react-router-dom";
 import { useCart } from "./CartContext";  // ✅ Cart Context Use Karo
 import "./details.css";
 
 function DetailsPage({ data }) {
   const { id } = useParams();
   const { addToCart } = useCart(); // ✅ Cart Functionality
+  const navigate = useNavigate();
   const item = data.find((product) => product._id === id);
 
   if (!item) {
@@ -18,7 +19,7 @@ function DetailsPage({ data }) {
       <p className="price"><span>₹</span>{item.price}</p>
       <p className="desc">{item.description}</p>
       <button className="addcart" onClick={() => addToCart(item)}>Add to Cart</button>
-      <button className="buynow">Buy Now</button>
+      <button className="buynow" onClick={() => navigate("/success")}>Buy Now</button>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import { useCart } from "./CartContext";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import "./cart.css";
 
 function Cart() {
   const { cart } = useCart(); 
+  const navigate = useNavigate();
 
   return (
     <div className="cart-page">
@@ -20,6 +21,7 @@ function Cart() {
                 <h3 className="cartname">{item.name}</h3>
                 <p className="price">₹{item.price}</p>
               </div>
+              <button className="buynowbtn" onClick={() => navigate("/success")}>Buy Now</button>
             </div>
           ))}
         </div>

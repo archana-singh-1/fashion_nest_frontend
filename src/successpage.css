@@ -1,0 +1,31 @@
+.success-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+  }
+  
+  .success-container h2 {
+    font-size: 28px;
+    color: green;
+  }
+  
+  .success-container p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .home-btn {
+    background: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+  
+  .home-btn:hover {
+    background: darkgreen;
+  }
+  

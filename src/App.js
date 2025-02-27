@@ -5,6 +5,7 @@ import Recoman from "./Recoman";
 import DetailsPage from "./DetailsPage";
 import Favorites from "./Favorites";
 import Cart from "./Cart";
+import SuccessPage from "./SuccessPage";
 import { useState, useEffect } from "react";
 import { CartProvider } from "./CartContext";
 
@@ -35,10 +36,11 @@ function App() {
         <Route path="/details/:id" element={<DetailsPage data={data} />} />
         <Route path="/favorites" element={<Favorites favorites={favorites} />} />
         <Route path="/cart" element={<Cart />} /> 
+        <Route path="/success" element={<SuccessPage />} /> 
         
       </Routes>
-      <Footer />
     </Router>
+      <Footer />
     </CartProvider>
   );
 }
