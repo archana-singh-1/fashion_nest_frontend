@@ -44,3 +44,9 @@
     text-align: center;
     padding: 20px;
   }
+  @media(max-width:720px){
+    .favorites-container {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+  }
