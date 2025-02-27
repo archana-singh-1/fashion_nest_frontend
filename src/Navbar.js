@@ -3,11 +3,12 @@ import "./navbar.css";
 
 function Navbar() {
   return (
-    <nav>
+    <nav >
       <div className="nav">
-        <div>
+        <Link to="/">
+
           <img src="./homelogo.png" alt="Home Logo" className="homelogo" />
-        </div>
+        </Link>
         <div className="search-container">
           <input type="text" placeholder="Search here" className="inputbtn" />
           <img src="./search.png" alt="Search Icon" className="search-icon" />

@@ -31,6 +31,7 @@ function App() {
         <Route path="/" element={<Recoman data={data} addToFavorites={addToFavorites} />} />
         <Route path="/details/:id" element={<DetailsPage data={data} />} />
         <Route path="/favorites" element={<Favorites favorites={favorites} />} />
+        
       </Routes>
       <Footer />
     </Router>
