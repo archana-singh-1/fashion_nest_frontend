@@ -7,8 +7,11 @@ import DetailsPage from "./DetailsPage";
 import Favorites from "./Favorites";
 import Cart from "./Cart";
 import SuccessPage from "./SuccessPage";
+import Login from "./Login";
+import Signup from "./Signup";
 import { useState, useEffect } from "react";
 import { CartProvider } from "./CartContext";
+import { AuthProvider } from "./AuthContext";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,6 +32,7 @@ function App() {
   };
 
   return (
+    <AuthProvider>
     <CartProvider>
     <Router>
       <Navbar />
@@ -38,11 +42,14 @@ function App() {
         <Route path="/favorites" element={<Favorites favorites={favorites} />} />
         <Route path="/cart" element={<Cart />} /> 
         <Route path="/success" element={<SuccessPage />} /> 
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         
       </Routes>
     </Router>
       <Footer />
     </CartProvider>
+    </AuthProvider>
   );
 }
 
