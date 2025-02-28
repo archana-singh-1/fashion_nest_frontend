@@ -1,8 +1,15 @@
 .success-container {
-    text-align: center;
+    border: solid 2px white;
+    background-color: white;
+    box-shadow: 5px 5px 10px gray;
     margin-top: 50px;
     padding: 20px;
+    width: 470px;
+    margin: auto;
+    margin-top: 98px;
+    text-align: center;
   }
+  
   
   .success-container h2 {
     font-size: 28px;

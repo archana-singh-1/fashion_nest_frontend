@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* About Us Section */}
+      
         <div className="footer-section">
           <h2>About Fashion Nest</h2>
           <p>
@@ -15,7 +15,7 @@ const Footer = () => {
           </p>
         </div>
         
-        {/* Quick Links */}
+      
         <div className="footer-section">
           <h2>Quick Links</h2>
           <ul>
@@ -26,7 +26,7 @@ const Footer = () => {
           </ul>
         </div>
         
-        {/* Newsletter & Social Media */}
+       
         <div className="footer-section">
           <h2>Stay Updated</h2>
           <input 
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Copyright */}
+    
       <div className="footer-copyright">
         © 2024 Fashion Nest. All Rights Reserved.
       </div>
