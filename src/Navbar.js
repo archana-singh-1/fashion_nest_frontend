@@ -1,16 +1,30 @@
+
+
+
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { useCart } from "./CartContext";
 import "./navbar.css";
 
-function Navbar() {
+function Navbar({ onSearch, onCategoryChange }) {
   const { user, logout } = useContext(AuthContext);
   const { cart } = useCart();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Function to close dropdown
-  const closeDropdown = () => setShowDropdown(false);
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setSearchTerm(query);
+    onSearch(query); 
+  };
+
+  const handleCategoryClick = (category) => {
+    console.log("Category Clicked:", category);
+    onCategoryChange(category);
+    setShowCategoryDropdown(false); 
+  };
 
   return (
     <nav>
@@ -19,8 +33,34 @@ function Navbar() {
           <img src="./homelogo.png" alt="Home Logo" className="homelogo" />
         </Link>
 
+        
+        <div className="category-container">
+          <button
+            className="category-btn"
+            onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
+          >
+            Categories
+          </button>
+
+          {showCategoryDropdown && (
+            <div className="categories">
+              <button onClick={() => handleCategoryClick("mens")}>Mens</button>
+              <button onClick={() => handleCategoryClick("womens")}>Womens</button>
+              <button onClick={() => handleCategoryClick("Childern")}>Childern</button>
+              <button onClick={() => handleCategoryClick("")}>All</button>
+            </div>
+          )}
+        </div>
+
+        
         <div className="search-container">
-          <input type="text" placeholder="Search here" className="inputbtn" />
+          <input
+            type="text"
+            placeholder="Search here"
+            className="inputbtn"
+            value={searchTerm}
+            onChange={handleSearch} 
+          />
           <img src="./search.png" alt="Search Icon" className="search-icon" />
         </div>
 
@@ -33,13 +73,12 @@ function Navbar() {
           {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
         </Link>
 
-        {/* Profile Icon */}
         <div className="profile-container">
-          <img 
-            src="./profile.png" 
-            alt="Profile" 
-            className="profile-icon" 
-            onClick={() => setShowDropdown(!showDropdown)} 
+          <img
+            src="./profile.png"
+            alt="Profile"
+            className="profile-icon"
+            onClick={() => setShowDropdown(!showDropdown)}
           />
 
           {showDropdown && (
@@ -47,12 +86,32 @@ function Navbar() {
               {user ? (
                 <>
                   <span>{user.username}</span>
-                  <button onClick={() => { logout(); closeDropdown(); }} className="logout-btn">Logout</button>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setShowDropdown(false);
+                    }}
+                    className="logout-btn"
+                  >
+                    Logout
+                  </button>
                 </>
               ) : (
                 <>
-                  <Link to="/login" className="dropdown-link" onClick={closeDropdown}>Login</Link>
-                  <Link to="/signup" className="dropdown-link" onClick={closeDropdown}>Signup</Link>
+                  <Link
+                    to="/login"
+                    className="dropdown-link"
+                    onClick={() => setShowDropdown(false)}
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="dropdown-link"
+                    onClick={() => setShowDropdown(false)}
+                  >
+                    Signup
+                  </Link>
                 </>
               )}
             </div>
@@ -64,5 +123,4 @@ function Navbar() {
 }
 
 export default Navbar;
-
 

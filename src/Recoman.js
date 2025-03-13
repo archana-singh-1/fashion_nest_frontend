@@ -22,3 +22,5 @@ function Recoman({ data, addToFavorites }) {
 }
 
 export default Recoman;
+
+
