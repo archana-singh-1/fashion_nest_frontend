@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { useCart } from "./CartContext";
@@ -10,6 +10,7 @@ function Navbar({ onSearch, onCategoryChange }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -18,7 +19,7 @@ function Navbar({ onSearch, onCategoryChange }) {
   const handleCategoryClick = (category) => {
     console.log("Category Clicked:", category);
     onCategoryChange(category);
-    setShowCategoryDropdown(false);
+    navigate("/"); 
   };
 
  
@@ -118,7 +119,6 @@ function Navbar({ onSearch, onCategoryChange }) {
 }
 
 export default Navbar;
-
 
 
 
