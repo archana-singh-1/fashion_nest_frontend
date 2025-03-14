@@ -35,11 +35,7 @@ function Navbar({ onSearch, onCategoryChange }) {
       <Link to="/" onClick={() => onCategoryChange("")}>
         <img src="./homelogo.png" alt="Home Logo" className="homelogo" />
       </Link>
-
-
-        
       
-
             <div className="categories">
               <button onClick={() => handleCategoryClick("mens")} className="cate">Mens</button>
               <button onClick={() => handleCategoryClick("womens")}className="cate">Womens</button>
@@ -62,9 +58,10 @@ function Navbar({ onSearch, onCategoryChange }) {
           <img src="./search.png" alt="Search Icon" className="search-icon" />
         </div>
 
-        <Link to="/favorites">
+        <Link to="/favorites" >
           <img src="./fav.png" alt="Favorites" className="fav" />
         </Link>
+       
 
         <Link to="/cart" className="cart-container">
           <img src="./cart.png" alt="Cart" className="cart" />
