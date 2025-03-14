@@ -32,9 +32,10 @@ function Navbar({ onSearch, onCategoryChange }) {
   return (
     <nav>
       <div className="nav">
-        <Link to="/">
-          <img src="./homelogo.png" alt="Home Logo" className="homelogo" />
-        </Link>
+      <Link to="/" onClick={() => onCategoryChange("")}>
+        <img src="./homelogo.png" alt="Home Logo" className="homelogo" />
+      </Link>
+
 
         
       
