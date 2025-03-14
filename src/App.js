@@ -49,24 +49,43 @@ function App() {
   
 
  
-  const handleSearch = (query) => {
+  const getSimilarity = (word1, word2) => {
+    if (!word1 || !word2) return 0;
+
+    const w1 = word1.toLowerCase();
+    const w2 = word2.toLowerCase();
+    
+    let matches = 0;
+    for (let i = 0; i < Math.min(w1.length, w2.length); i++) {
+        if (w1[i] === w2[i]) {
+            matches++;
+        }
+    }
+    
+    return matches / Math.max(w1.length, w2.length);
+};
+
+const handleSearch = (query) => {
     console.log("Search Query:", query);
     setSearchQuery(query);
 
     if (query.trim() !== "") {
-        const filtered = data.filter((item) =>
-            item.name?.toLowerCase().includes(query.trim().toLowerCase()) ||  
-            item.category?.trim().toLowerCase() === query.trim().toLowerCase() 
-        );
+        const searchTerm = query.trim().toLowerCase();
+
+        const filtered = data.filter((item) => {
+            const nameMatch = item.name?.toLowerCase().includes(searchTerm);
+            const categoryMatch = item.category?.trim().toLowerCase().startsWith(searchTerm);
+            const fuzzyMatch = getSimilarity(searchTerm, item.category?.toLowerCase()) > 0.6; // 60% match
+
+            return nameMatch || categoryMatch || fuzzyMatch;
+        });
+
         console.log("Filtered Data by Search:", filtered);
         setFilteredData(filtered);
     } else {
-        setFilteredData(data); 
+        setFilteredData(data);
     }
 };
-
-
-  
 
 
   const addToFavorites = (item) => {
