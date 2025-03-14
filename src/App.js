@@ -30,11 +30,11 @@ function App() {
       .catch((err) => console.error("Error fetching data:", err));
   }, []);
 
-
+ 
   useEffect(() => {
     console.log("Selected Category:", category);
     console.log("Available Categories in Data:", data.map((item) => item.category));
-
+  
     if (category) {
       const filtered = data.filter(
         (item) =>
@@ -46,24 +46,32 @@ function App() {
       setFilteredData(data);
     }
   }, [category, data]);
+  
 
+ 
   const handleSearch = (query) => {
     console.log("Search Query:", query);
     setSearchQuery(query);
 
-    if (query) {
-      const filtered = data.filter((item) =>
-        item.name?.toLowerCase().includes(query.trim().toLowerCase())
-      );
-      setFilteredData(filtered);
+    if (query.trim() !== "") {
+        const filtered = data.filter((item) =>
+            item.name?.toLowerCase().includes(query.trim().toLowerCase()) ||  
+            item.category?.trim().toLowerCase() === query.trim().toLowerCase() 
+        );
+        console.log("Filtered Data by Search:", filtered);
+        setFilteredData(filtered);
     } else {
-      setFilteredData(data);
+        setFilteredData(data); 
     }
-  };
+};
+
+
+  
+
 
   const addToFavorites = (item) => {
     setFavorites((prev) => {
-      const isAlreadyFav = prev.find((fav) => fav._id === item._id);
+      const isAlreadyFav = prev.some((fav) => fav._id === item._id);
       return isAlreadyFav ? prev.filter((fav) => fav._id !== item._id) : [...prev, item];
     });
   };
@@ -76,6 +84,7 @@ function App() {
     }
   }, []);
 
+  
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -102,3 +111,6 @@ function App() {
 }
 
 export default App;
+
+
+

@@ -1,6 +1,3 @@
-
-
-
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
@@ -12,18 +9,24 @@ function Navbar({ onSearch, onCategoryChange }) {
   const { cart } = useCart();
   const [showDropdown, setShowDropdown] = useState(false);
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
-  const handleSearch = (e) => {
-    const query = e.target.value;
-    setSearchTerm(query);
-    onSearch(query); 
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
   };
 
   const handleCategoryClick = (category) => {
     console.log("Category Clicked:", category);
     onCategoryChange(category);
-    setShowCategoryDropdown(false); 
+    setShowCategoryDropdown(false);
+  };
+
+ 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && searchInput.trim() !== "") {
+      console.log("Search triggered with input:", searchInput); 
+      onSearch(searchInput);
+    }
   };
 
   return (
@@ -46,7 +49,7 @@ function Navbar({ onSearch, onCategoryChange }) {
             <div className="categories">
               <button onClick={() => handleCategoryClick("mens")}>Mens</button>
               <button onClick={() => handleCategoryClick("womens")}>Womens</button>
-              <button onClick={() => handleCategoryClick("Childern")}>Childern</button>
+              <button onClick={() => handleCategoryClick("childern")}>Childern</button>
               <button onClick={() => handleCategoryClick("")}>All</button>
             </div>
           )}
@@ -58,8 +61,11 @@ function Navbar({ onSearch, onCategoryChange }) {
             type="text"
             placeholder="Search here"
             className="inputbtn"
-            value={searchTerm}
-            onChange={handleSearch} 
+            value={searchInput}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown} 
+
+         
           />
           <img src="./search.png" alt="Search Icon" className="search-icon" />
         </div>
@@ -123,4 +129,8 @@ function Navbar({ onSearch, onCategoryChange }) {
 }
 
 export default Navbar;
+
+
+
+
 
