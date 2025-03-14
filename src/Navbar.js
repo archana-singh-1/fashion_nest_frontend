@@ -37,23 +37,14 @@ function Navbar({ onSearch, onCategoryChange }) {
         </Link>
 
         
-        <div className="category-container">
-          <button
-            className="category-btn"
-            onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
-          >
-            Categories
-          </button>
+      
 
-          {showCategoryDropdown && (
             <div className="categories">
-              <button onClick={() => handleCategoryClick("mens")}>Mens</button>
-              <button onClick={() => handleCategoryClick("womens")}>Womens</button>
-              <button onClick={() => handleCategoryClick("childern")}>Childern</button>
-              <button onClick={() => handleCategoryClick("")}>All</button>
+              <button onClick={() => handleCategoryClick("mens")} className="cate">Mens</button>
+              <button onClick={() => handleCategoryClick("womens")}className="cate">Womens</button>
+              <button onClick={() => handleCategoryClick("childern")}className="cate">Childern</button>
+              <button onClick={() => handleCategoryClick("")}className="cate">All</button>
             </div>
-          )}
-        </div>
 
         
         <div className="search-container">
