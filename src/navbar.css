@@ -8,13 +8,13 @@
 .inputbtn{
     height: 51px;
     width: 454px;
-    margin-left: 300px;
+    margin-left: 220px;
 }
 
 .homelogo{
     height: 40px;
-    margin-left: 56px;
     margin-top: 16px;
+    margin-left: 34px;
 }
 
 
@@ -53,7 +53,7 @@
 
 .search-icon {
   position: absolute;
-  left: 315px;
+  left: 235px;
   height: 25px;
   margin-top: 4px;
   cursor: pointer;
@@ -141,9 +141,8 @@
  
   
   .categories{
-
+    display: flex;
     margin: 20px;
-    margin-left: 78px;
   }
   .cate{
     background: none;

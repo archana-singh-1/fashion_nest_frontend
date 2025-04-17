@@ -21,7 +21,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    fetch("https://fashion-nest-backend-ejhs.vercel.app/api/products/product")
+    fetch("http://localhost:4000/api/products/product")
       .then((res) => res.json())
       .then((json) => {
         setData(json || []);
