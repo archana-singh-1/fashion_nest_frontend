@@ -21,7 +21,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/products/product")
+    fetch("https://fashion-nest-backend-1.onrender.com/api/products/product")
       .then((res) => res.json())
       .then((json) => {
         setData(json || []);
