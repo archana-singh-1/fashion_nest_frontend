@@ -262,6 +262,10 @@
   .mobile-categories{
     background-color: white;
   }
+
+  .cart-count{
+    top:0;
+  }
 }
 
 
